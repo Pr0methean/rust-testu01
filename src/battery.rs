@@ -26,14 +26,14 @@ use std::ffi::CStr;
 use std::str;
 
 mod ffi {
-    #[link(name = "testu01", kind = "static")]
+    #[link(name = "testu01")]
     extern {
         pub static mut bbattery_NTests: ::libc::c_int;
         pub static mut bbattery_pVal: [::libc::c_double; 0];
         pub static mut bbattery_TestNames: [*const ::libc::c_char; 0];
     }
 
-    #[link(name = "testu01", kind = "static")]
+    #[link(name = "testu01")]
     extern {
         pub fn bbattery_SmallCrush(gen: *mut ::unif01::ffi::raw_unif01_Gen);
         pub fn bbattery_SmallCrushFile(filename: *const ::libc::c_char);
