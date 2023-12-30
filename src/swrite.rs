@@ -25,7 +25,7 @@ mod ffi {
     #[allow(non_camel_case_types)]
     pub type lebool = ::libc::c_int;
 
-    #[link(name = "testu01")]
+    #[link(name = "testu01", kind = "static")]
     extern {
         pub static mut swrite_Basic: lebool;
         pub static mut swrite_Parameters: lebool;
@@ -35,7 +35,8 @@ mod ffi {
         pub static mut swrite_Host: lebool;
     // pub static mut swrite_ExperimentName: *mut ::libc::c_char;
     }
-    #[link(name = "testu01")]
+    #[link(name = "testu01", kind = "static")]
+    #[allow(non_snake_case)]
     extern {
         pub fn swrite_SetExperimentName(Name: *const ::libc::c_char) -> ();
     }
