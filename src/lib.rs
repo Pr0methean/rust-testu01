@@ -15,8 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#![crate_type = "rlib"]
-
 //! This crate is a wrapper around a small subset of TestU01.
 
 #[macro_use]
