@@ -111,10 +111,11 @@ impl<T: Unif01Methods> WithRawUnif01Gen for Unif01Gen<T> {
 
 
 impl<T> Unif01Methods for T where T: RngCore + fmt::Debug {
+    #[inline]
     fn get_u01(&mut self) -> f64 {
         self.gen::<f64>()
     }
-
+    #[inline]
     fn get_bits(&mut self) -> u32 {
         self.gen::<u32>()
     }
@@ -127,10 +128,11 @@ impl<T> Unif01Methods for T where T: RngCore + fmt::Debug {
 pub struct Unif01Pair<T, F>(pub T, pub F);
 
 impl<T, F> Unif01Methods for Unif01Pair<T,F> where T: RngCore, F: FnMut(&mut T) {
+    #[inline]
     fn get_u01(&mut self) -> f64 {
         self.0.gen::<f64>()
     }
-
+    #[inline]
     fn get_bits(&mut self) -> u32 {
         self.0.gen::<u32>()
     }
